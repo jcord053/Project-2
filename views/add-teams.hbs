@@ -1,0 +1,29 @@
+<nav id="nav-bar">
+    <div>
+        <h2>Team Tracker</h2>
+    </div>
+    <div id="buttons">
+        <a href="/profile"><button>Profile</button></a>
+        <form action="/logout" method="post">
+            <button>Log Out</button>
+        </form>
+    </div>
+</nav>
+
+<main>
+    
+    <h2>Add Another Team to Your Following</h2>
+
+
+    <form action="/add-teams" method="post">
+        <label>New Team to Follow:</label>
+        <select name="team">
+            {{#each teams.data.data}}
+            <option value="{{this.id}}{{this.full_name}}">{{this.full_name}}</option>
+            {{/each}}
+        </select>
+        <button type="submit" class="button">Add Team</button>
+    </form>
+
+
+</main>
